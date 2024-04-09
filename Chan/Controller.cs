@@ -10,6 +10,7 @@ public class Controller : MonoBehaviour
     public float BrightnessIntensity;
     public float ColorIntensity;
     public float GroupSize;
+    public int ColorBitValue;
     int Term;
 
     void Start()
@@ -17,6 +18,7 @@ public class Controller : MonoBehaviour
         CameraFOV = 10f;
         BrightnessIntensity = 0.0f;
         ColorIntensity = 0.0f;
+        ColorBitValue = 256;
         GroupSize = 1f;
     }
 
@@ -44,6 +46,7 @@ public class Controller : MonoBehaviour
             BrightnessIntensity = 0.0f;
             ColorIntensity = 0.0f;
             GroupSize = 1f;
+            ColorBitValue = 256;
         }
 
         if (Term == 1)
@@ -79,14 +82,16 @@ public class Controller : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.Alpha1))
             {
-                ColorIntensity += 0.01f;
-                Debug.Log("ColorIntensity is : " + ColorIntensity);
+                //ColorIntensity += 0.01f;
+                ColorBitValue /= 2;
+                Debug.Log("ColorIntensity is : " + ColorBitValue);
             }
 
-            if (Input.GetKeyDown(KeyCode.Alpha3) && ColorIntensity > 0)
+            if (Input.GetKeyDown(KeyCode.Alpha3))
             {
-                ColorIntensity -= 0.01f;
-                Debug.Log("ColorIntensity is : " + ColorIntensity);
+                //ColorIntensity -= 0.01f;
+                ColorBitValue *= 2;
+                Debug.Log("ColorIntensity is : " + ColorBitValue);
             }
         }
         else if (Term == 4)

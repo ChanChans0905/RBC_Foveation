@@ -21,6 +21,7 @@ public class GazePointCoorToShader_2D : MonoBehaviour
         myMaterial.SetVector("UserGazePoint", new Vector4(UserGazePoint.x, UserGazePoint.y, UserGazePoint.z, 0));
         myMaterial.SetFloat("BrightnessIntensity", Con.BrightnessIntensity);
         myMaterial.SetFloat("ColorIntensity", Con.ColorIntensity);
+        myMaterial.SetInt("ColorBitValue", Con.ColorBitValue);
         myMaterial.SetFloat("FoveaRegionSize", Con.FoveaRegionSize);
         myMaterial.SetFloat("GroupSize", Con.GroupSize);
     }
